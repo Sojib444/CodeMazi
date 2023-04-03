@@ -28,7 +28,14 @@ namespace Persistance.Repository
 
         public IQueryable<T> FindAll(bool trackChanges)
         {
-            throw new NotImplementedException();
+            if(!trackChanges)
+            {
+                return _set.AsNoTracking();
+            }
+            else
+            {
+                return _set.AsTracking();
+            }
         }
 
         public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression, bool trackChanges)

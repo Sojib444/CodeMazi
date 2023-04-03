@@ -9,5 +9,13 @@ namespace Persistance.Repository
         public ComapnyRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext)
         {
         }
+
+        public IEnumerable<Company> GetAllCompanies(bool trackChanges)
+        {
+            return FindAll(trackChanges)
+                 .OrderBy(c => c.Name)
+                 .ToList();
+
+        }
     }
 }
