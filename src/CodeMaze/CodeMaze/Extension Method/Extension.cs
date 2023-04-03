@@ -3,6 +3,8 @@ using Contract.UnitOfWork;
 using Contract.UserRepository;
 using LoggerService;
 using Persistance.UnitOfWorks;
+using Persistance.UserRepository;
+using Repository.Context;
 
 namespace CodeMaze.Extension_Method
 {
@@ -17,7 +19,8 @@ namespace CodeMaze.Extension_Method
         {
             services.AddScoped<IApplicationUnitofWork, ApplicationUnitofWork>();
             services.AddScoped<IUnitofWork, UnitOfwork>();
-            services.AddScoped<ICompanyRepository, Company>();
+            services.AddScoped<ICompanyRepository,CompanyRepository>();
+            services.AddScoped<ApplicationDbContext>();
         }
     }
 }
