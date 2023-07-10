@@ -37,3 +37,5 @@ Console.WriteLine(MyName("Alibaba"));
 Action<string> action_Delegate = (string name) => Console.WriteLine(name);
 
 action_Delegate("Jak ma");
+
+
