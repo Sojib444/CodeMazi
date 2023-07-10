@@ -8,5 +8,13 @@
                                    builder.AllowAnyOrigin().
                                    AllowAnyHeader()));
         }
+
+        public static void ConfigureCQRS1(this IServiceCollection service)
+        {
+            service.AddCors(action => action.AddPolicy("poliicy", builder =>
+                                   builder.AllowAnyOrigin().
+                                   AllowAnyHeader()));
+        }
+
     }
 }
