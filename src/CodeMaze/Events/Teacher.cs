@@ -1,18 +1,21 @@
-﻿namespace Event
+﻿using Events;
+
+namespace Event
 {
     public delegate void Notic(string massage);
     public class Teacher
     {
         public event Notic? Notification;
+        public event EventHandler<Student> ProcessCompleted;
 
-        public void StartProcess(string massage)
+        public void StartProcess()
         {
-            OnNotification(massage);
+            OnNotification();
         }
         
-        protected virtual void OnNotification(string massage)
+        protected virtual void OnNotification()
         {
-            Notification?.Invoke(massage);
+            ProcessCompleted.Invoke(this, new Student("Sojib"));
         }
     }
 }

@@ -4,8 +4,12 @@ using Event;
 using Events;
 
 Teacher teacher = new Teacher();
-Student student = new Student();
 
-teacher.Notification += student.Teachercall;
+teacher.ProcessCompleted += teacherCall;
 
-teacher.StartProcess(" Hello students");
+teacher.StartProcess();
+
+void teacherCall(object sender,Student student)
+{
+    Console.WriteLine($"{student.name} is called by teacher");
+}

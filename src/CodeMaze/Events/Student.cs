@@ -1,10 +1,12 @@
 ﻿namespace Events
 {
-    public class Student
+    public class Student:EventArgs
     {
-        public void Teachercall(string Massage)
+        public readonly string name;
+
+        public Student(string name)
         {
-            Console.WriteLine("Teacher is calling" + Massage);
+            this.name = name;
         }
     }
 }
