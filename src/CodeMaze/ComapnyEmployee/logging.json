@@ -1,0 +1,18 @@
+{
+  "Serilog": {
+    "Using": ["Serilog.Sinks.File", "Serilog.Sinks.MSSqlServer" ],
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Warning",
+        "System": "Warning"
+      },
+      "WriteTo": [
+        {
+          "Name":
+        }
+      ]
+    }
+  }
+
+}
