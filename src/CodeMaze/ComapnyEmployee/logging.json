@@ -9,8 +9,9 @@
       },
       "WriteTo": [
         {
-          "Name":
-        }
+          "Name": "File",
+          "Path": "logs/log.txt",
+          "rollingInterval": ""
       ]
     }
   }

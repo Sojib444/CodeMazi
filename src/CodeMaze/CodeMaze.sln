@@ -9,7 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practice", "Practice", "{2D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegate", "Delegate\Delegate\Delegate.csproj", "{D32399A4-E3E3-4016-BA13-7949D1C60FF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events", "Events\Events.csproj", "{6FBD9D86-A0E0-46EC-8D70-CA02B82A2380}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events", "Events\Events.csproj", "{6FBD9D86-A0E0-46EC-8D70-CA02B82A2380}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{A310E122-2F23-4BB5-BABC-E996A581F3E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LoggerService\LoggerService.csproj", "{898120FC-4ED0-4A20-BE4D-9986AA901FDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +33,14 @@ Global
 		{6FBD9D86-A0E0-46EC-8D70-CA02B82A2380}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FBD9D86-A0E0-46EC-8D70-CA02B82A2380}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FBD9D86-A0E0-46EC-8D70-CA02B82A2380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A310E122-2F23-4BB5-BABC-E996A581F3E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A310E122-2F23-4BB5-BABC-E996A581F3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A310E122-2F23-4BB5-BABC-E996A581F3E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A310E122-2F23-4BB5-BABC-E996A581F3E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{898120FC-4ED0-4A20-BE4D-9986AA901FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{898120FC-4ED0-4A20-BE4D-9986AA901FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{898120FC-4ED0-4A20-BE4D-9986AA901FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{898120FC-4ED0-4A20-BE4D-9986AA901FDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
