@@ -1,0 +1,48 @@
+2023-07-20 23:27:57.779 +06:00 [INF] Now listening on: https://localhost:7096
+2023-07-20 23:27:57.830 +06:00 [INF] Now listening on: http://localhost:5053
+2023-07-20 23:27:57.833 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-20 23:27:57.836 +06:00 [INF] Hosting environment: Development
+2023-07-20 23:27:57.837 +06:00 [INF] Content root path: E:\Software Enginering\CodeMazi\src\CodeMaze\ComapnyEmployee
+2023-07-20 23:27:58.909 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7096/weatherforecast - -
+2023-07-20 23:27:59.048 +06:00 [INF] Executing endpoint 'ComapnyEmployee.Controllers.WeatherForecastController.Get (ComapnyEmployee)'
+2023-07-20 23:27:59.076 +06:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[ComapnyEmployee.WeatherForecast] Get() on controller ComapnyEmployee.Controllers.WeatherForecastController (ComapnyEmployee).
+2023-07-20 23:27:59.097 +06:00 [INF] Executing ObjectResult, writing value of type 'ComapnyEmployee.WeatherForecast[]'.
+2023-07-20 23:27:59.222 +06:00 [INF] Executed action ComapnyEmployee.Controllers.WeatherForecastController.Get (ComapnyEmployee) in 136.4071ms
+2023-07-20 23:27:59.246 +06:00 [INF] Executed endpoint 'ComapnyEmployee.Controllers.WeatherForecastController.Get (ComapnyEmployee)'
+2023-07-20 23:27:59.264 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7096/weatherforecast - - - 200 - application/json;+charset=utf-8 357.9555ms
+2023-07-20 23:28:32.045 +06:00 [INF] Now listening on: https://localhost:7096
+2023-07-20 23:28:32.078 +06:00 [INF] Now listening on: http://localhost:5053
+2023-07-20 23:28:32.083 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-20 23:28:32.084 +06:00 [INF] Hosting environment: Development
+2023-07-20 23:28:32.085 +06:00 [INF] Content root path: E:\Software Enginering\CodeMazi\src\CodeMaze\ComapnyEmployee
+2023-07-20 23:28:32.778 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7096/weatherforecast - -
+2023-07-20 23:28:32.849 +06:00 [INF] Executing endpoint 'ComapnyEmployee.Controllers.WeatherForecastController.Get (ComapnyEmployee)'
+2023-07-20 23:28:32.866 +06:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[ComapnyEmployee.WeatherForecast] Get() on controller ComapnyEmployee.Controllers.WeatherForecastController (ComapnyEmployee).
+2023-07-20 23:28:32.896 +06:00 [INF] Executing ObjectResult, writing value of type 'ComapnyEmployee.WeatherForecast[]'.
+2023-07-20 23:28:32.987 +06:00 [INF] Executed action ComapnyEmployee.Controllers.WeatherForecastController.Get (ComapnyEmployee) in 103.6253ms
+2023-07-20 23:28:32.993 +06:00 [INF] Executed endpoint 'ComapnyEmployee.Controllers.WeatherForecastController.Get (ComapnyEmployee)'
+2023-07-20 23:28:33.012 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7096/weatherforecast - - - 200 - application/json;+charset=utf-8 237.1472ms
+2023-07-20 23:29:01.281 +06:00 [INF] Now listening on: https://localhost:7096
+2023-07-20 23:29:01.313 +06:00 [INF] Now listening on: http://localhost:5053
+2023-07-20 23:29:01.316 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-20 23:29:01.317 +06:00 [INF] Hosting environment: Development
+2023-07-20 23:29:01.318 +06:00 [INF] Content root path: E:\Software Enginering\CodeMazi\src\CodeMaze\ComapnyEmployee
+2023-07-20 23:29:01.974 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7096/weatherforecast - -
+2023-07-20 23:29:02.062 +06:00 [INF] Executing endpoint 'ComapnyEmployee.Controllers.WeatherForecastController.Get (ComapnyEmployee)'
+2023-07-20 23:29:02.086 +06:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[ComapnyEmployee.WeatherForecast] Get() on controller ComapnyEmployee.Controllers.WeatherForecastController (ComapnyEmployee).
+2023-07-20 23:29:02.098 +06:00 [INF] Executing ObjectResult, writing value of type 'ComapnyEmployee.WeatherForecast[]'.
+2023-07-20 23:29:02.182 +06:00 [INF] Executed action ComapnyEmployee.Controllers.WeatherForecastController.Get (ComapnyEmployee) in 87.243ms
+2023-07-20 23:29:02.193 +06:00 [INF] Executed endpoint 'ComapnyEmployee.Controllers.WeatherForecastController.Get (ComapnyEmployee)'
+2023-07-20 23:29:02.238 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7096/weatherforecast - - - 200 - application/json;+charset=utf-8 270.3173ms
+2023-07-20 23:29:27.140 +06:00 [INF] Now listening on: https://localhost:7096
+2023-07-20 23:29:27.173 +06:00 [INF] Now listening on: http://localhost:5053
+2023-07-20 23:29:27.176 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-20 23:29:27.177 +06:00 [INF] Hosting environment: Development
+2023-07-20 23:29:27.179 +06:00 [INF] Content root path: E:\Software Enginering\CodeMazi\src\CodeMaze\ComapnyEmployee
+2023-07-20 23:29:27.898 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7096/weatherforecast - -
+2023-07-20 23:29:27.980 +06:00 [INF] Executing endpoint 'ComapnyEmployee.Controllers.WeatherForecastController.Get (ComapnyEmployee)'
+2023-07-20 23:29:28.003 +06:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[ComapnyEmployee.WeatherForecast] Get() on controller ComapnyEmployee.Controllers.WeatherForecastController (ComapnyEmployee).
+2023-07-20 23:29:28.014 +06:00 [INF] Executing ObjectResult, writing value of type 'ComapnyEmployee.WeatherForecast[]'.
+2023-07-20 23:29:28.110 +06:00 [INF] Executed action ComapnyEmployee.Controllers.WeatherForecastController.Get (ComapnyEmployee) in 99.8311ms
+2023-07-20 23:29:28.115 +06:00 [INF] Executed endpoint 'ComapnyEmployee.Controllers.WeatherForecastController.Get (ComapnyEmployee)'
+2023-07-20 23:29:28.136 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7096/weatherforecast - - - 200 - application/json;+charset=utf-8 239.0988ms
