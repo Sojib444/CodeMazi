@@ -3,9 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Repository
 {
-    public static class ServiceEntension
+    public static class RepositoryExtension
     {
-        public static void UnitofWork(this IServiceCollection services)
+        public static void RepositoryConfiguration(this IServiceCollection services)
         {
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();

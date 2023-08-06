@@ -19,7 +19,8 @@ option.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection"),
 assembly => assembly.MigrationsAssembly("CompanyEmployee")));
 
 //Register Dependency
-builder.Services.UnitofWork();
+builder.Services.RepositoryConfiguration();
+builder.Services.ServiceConfiguration();
 
 //CQRS configuration
 builder.Services.ConfigureCQRS();
