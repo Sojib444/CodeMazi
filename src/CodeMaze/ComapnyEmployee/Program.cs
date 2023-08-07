@@ -25,7 +25,9 @@ builder.Services.ServiceConfiguration();
 //CQRS configuration
 builder.Services.ConfigureCQRS();
 
-builder.Services.AddControllers();
+//Add controller Assembly reference
+builder.Services.AddControllers()
+.AddApplicationPart(typeof(CompanyEmployees.Presentation.AssemblyReference).Assembly);
 
 var app = builder.Build();
 
