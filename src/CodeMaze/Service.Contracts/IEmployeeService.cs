@@ -1,4 +1,4 @@
-﻿namespace Service.Contracts
+﻿namespace Services.Contracts
 {
     public interface IEmployeeService
     {

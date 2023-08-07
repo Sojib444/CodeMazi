@@ -1,4 +1,9 @@
-﻿namespace ComapnyEmployee.Entension
+﻿using Contracts;
+using Repository;
+using Services.Contracts;
+using Services;
+
+namespace ComapnyEmployee.Entension
 {
     public static  class ServiceExtension
     {
@@ -14,6 +19,21 @@
             service.AddCors(action => action.AddPolicy("poliicy", builder =>
                                    builder.AllowAnyOrigin().
                                    AllowAnyHeader()));
+        }
+
+        public static void RepositoryConfiguration(this IServiceCollection services)
+        {
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IUnitofWork, UnitofWork>();
+            services.AddScoped<RepositoryContext>();
+        }
+
+        public static void ServiceConfiguration(this IServiceCollection services)
+        {
+            services.AddScoped<ICompanyService, ComapnyService>();
+            services.AddScoped<IEmployeeService, EmployeeService>();
+            services.AddScoped<IService, Service>();
         }
 
     }
