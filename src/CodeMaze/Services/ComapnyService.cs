@@ -1,4 +1,5 @@
 ﻿using Contracts;
+using Entities.Model;
 using Services.Contracts;
 
 namespace Services
@@ -10,6 +11,18 @@ namespace Services
         public ComapnyService(IUnitofWork unitofWork)
         {
             this.unitofWork = unitofWork;
+        }
+
+        public  IEnumerable<Company> GetAllCompanies(bool trackChange)
+        {
+            try
+            {
+                return unitofWork.companyRepository.GetAllComapniesAsync(trackChange);
+            }
+            catch(Exception ex)
+            {
+                throw ;
+            }
         }
     }
 }

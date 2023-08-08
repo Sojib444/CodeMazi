@@ -10,9 +10,9 @@ namespace Repository
 
         }
 
-        public async Task<IQueryable<Company>> GetAllComapniesAsync(bool trackChange)
+        public IEnumerable<Company> GetAllComapniesAsync(bool trackChange)
         {
-            return  FinaAll(trackChange).OrderBy(e => e.Name);
+            return  FinaAll(trackChange).OrderBy(e => e.Name).ToList();
         }
     }
 }

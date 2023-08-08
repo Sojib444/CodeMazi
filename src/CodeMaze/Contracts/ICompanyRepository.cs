@@ -4,6 +4,6 @@ namespace Contracts
 {
     public interface ICompanyRepository
     {
-        Task<IQueryable<Company>> GetAllComapniesAsync(bool trackChange);
+        IEnumerable<Company> GetAllComapniesAsync(bool trackChange);
     }
 }
