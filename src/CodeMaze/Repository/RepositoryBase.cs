@@ -29,9 +29,9 @@ namespace Repository
             dbSet.Update(entity);
         }
 
-        public IQueryable<T> FinaAll(bool trackChange)
+        public IEnumerable<T> FinaAll(bool trackChange)
         {
-            return !trackChange ? dbSet.AsNoTracking() : dbSet;
+            return dbSet.ToList();
         }
 
         public IQueryable<T> FindAllCondition(Expression<Func<T, bool>> expression, bool trackChange)

@@ -99,3 +99,55 @@ ORDER BY [c].[Name]
 2023-08-08 23:28:20.511 +06:00 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
 SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
 FROM [companies] AS [c]
+2023-08-08 23:40:26.328 +06:00 [INF] Now listening on: https://localhost:7096
+2023-08-08 23:40:26.402 +06:00 [INF] Now listening on: http://localhost:5053
+2023-08-08 23:40:26.408 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 23:40:26.410 +06:00 [INF] Hosting environment: Development
+2023-08-08 23:40:26.412 +06:00 [INF] Content root path: E:\Software Enginering\CodeMazi\src\CodeMaze\ComapnyEmployee
+2023-08-08 23:40:27.548 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7096/weatherforecast - -
+2023-08-08 23:40:27.741 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7096/weatherforecast - - - 404 0 - 191.3629ms
+2023-08-08 23:40:44.802 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7096/api/Companies - -
+2023-08-08 23:40:44.812 +06:00 [INF] Executing endpoint 'CompanyEmployees.Presentation.Controllers.CompaniesController.GetComapanies (CompanyEmployees.Presentation)'
+2023-08-08 23:40:44.838 +06:00 [INF] Route matched with {action = "GetComapanies", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetComapanies() on controller CompanyEmployees.Presentation.Controllers.CompaniesController (CompanyEmployees.Presentation).
+2023-08-08 23:40:46.082 +06:00 [INF] Entity Framework Core 6.0.20 initialized 'RepositoryContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: MigrationsAssembly=CompanyEmployee 
+2023-08-08 23:40:47.217 +06:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CompanyId], [c].[Address], [c].[Country], [c].[Name]
+FROM [companies] AS [c]
+ORDER BY [c].[Name]
+2023-08-08 23:40:47.256 +06:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entities.Model.Company, Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-08 23:40:47.359 +06:00 [INF] Executed action CompanyEmployees.Presentation.Controllers.CompaniesController.GetComapanies (CompanyEmployees.Presentation) in 2514.4235ms
+2023-08-08 23:40:47.363 +06:00 [INF] Executed endpoint 'CompanyEmployees.Presentation.Controllers.CompaniesController.GetComapanies (CompanyEmployees.Presentation)'
+2023-08-08 23:40:47.375 +06:00 [INF] Request finished HTTP/1.1 GET https://localhost:7096/api/Companies - - - 200 - application/json;+charset=utf-8 2572.9238ms
+2023-08-08 23:41:32.177 +06:00 [INF] Now listening on: https://localhost:7096
+2023-08-08 23:41:32.238 +06:00 [INF] Now listening on: http://localhost:5053
+2023-08-08 23:41:32.242 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 23:41:32.243 +06:00 [INF] Hosting environment: Development
+2023-08-08 23:41:32.253 +06:00 [INF] Content root path: E:\Software Enginering\CodeMazi\src\CodeMaze\ComapnyEmployee
+2023-08-08 23:41:33.048 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7096/weatherforecast - -
+2023-08-08 23:41:33.220 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7096/weatherforecast - - - 404 0 - 171.1740ms
+2023-08-08 23:41:37.070 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7096/api/Companies - -
+2023-08-08 23:41:37.077 +06:00 [INF] Executing endpoint 'CompanyEmployees.Presentation.Controllers.CompaniesController.GetComapanies (CompanyEmployees.Presentation)'
+2023-08-08 23:41:37.096 +06:00 [INF] Route matched with {action = "GetComapanies", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetComapanies() on controller CompanyEmployees.Presentation.Controllers.CompaniesController (CompanyEmployees.Presentation).
+2023-08-08 23:41:38.353 +06:00 [INF] Entity Framework Core 6.0.20 initialized 'RepositoryContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: MigrationsAssembly=CompanyEmployee 
+2023-08-08 23:52:02.913 +06:00 [INF] Now listening on: https://localhost:7096
+2023-08-08 23:52:02.966 +06:00 [INF] Now listening on: http://localhost:5053
+2023-08-08 23:52:02.970 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 23:52:02.971 +06:00 [INF] Hosting environment: Development
+2023-08-08 23:52:02.973 +06:00 [INF] Content root path: E:\Software Enginering\CodeMazi\src\CodeMaze\ComapnyEmployee
+2023-08-08 23:52:04.098 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7096/weatherforecast - -
+2023-08-08 23:52:04.232 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7096/weatherforecast - - - 404 0 - 137.5915ms
+2023-08-08 23:52:11.160 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7096/api/Companies - -
+2023-08-08 23:52:11.170 +06:00 [INF] Executing endpoint 'CompanyEmployees.Presentation.Controllers.CompaniesController.GetComapanies (CompanyEmployees.Presentation)'
+2023-08-08 23:52:11.190 +06:00 [INF] Route matched with {action = "GetComapanies", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetComapanies() on controller CompanyEmployees.Presentation.Controllers.CompaniesController (CompanyEmployees.Presentation).
+2023-08-08 23:52:20.476 +06:00 [INF] Entity Framework Core 6.0.20 initialized 'RepositoryContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: MigrationsAssembly=CompanyEmployee 
+2023-08-08 23:59:28.243 +06:00 [INF] Now listening on: https://localhost:7096
+2023-08-08 23:59:28.323 +06:00 [INF] Now listening on: http://localhost:5053
+2023-08-08 23:59:28.328 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-08 23:59:28.330 +06:00 [INF] Hosting environment: Development
+2023-08-08 23:59:28.333 +06:00 [INF] Content root path: E:\Software Enginering\CodeMazi\src\CodeMaze\ComapnyEmployee
+2023-08-08 23:59:29.559 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7096/weatherforecast - -
+2023-08-08 23:59:29.753 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7096/weatherforecast - - - 404 0 - 195.7044ms
+2023-08-08 23:59:33.218 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7096/api/Companies - -
+2023-08-08 23:59:33.247 +06:00 [INF] Executing endpoint 'CompanyEmployees.Presentation.Controllers.CompaniesController.GetComapanies (CompanyEmployees.Presentation)'
+2023-08-08 23:59:33.271 +06:00 [INF] Route matched with {action = "GetComapanies", controller = "Companies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetComapanies() on controller CompanyEmployees.Presentation.Controllers.CompaniesController (CompanyEmployees.Presentation).
+2023-08-08 23:59:34.615 +06:00 [INF] Entity Framework Core 6.0.20 initialized 'RepositoryContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.20' with options: MigrationsAssembly=CompanyEmployee 
