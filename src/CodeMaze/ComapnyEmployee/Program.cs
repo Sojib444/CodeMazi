@@ -8,7 +8,6 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 //Serilog Configure
-
 Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .CreateLogger();
@@ -44,6 +43,5 @@ app.UseCors();
 app.UseAuthorization();
 
 app.MapControllers();
-
 
 app.Run();
