@@ -1,5 +1,6 @@
 ﻿using Contracts;
 using Serilog;
+using Serilog.Events;
 
 namespace LoggerService
 {
@@ -8,22 +9,22 @@ namespace LoggerService
 
         public void LogDebug(string message)
         {
-            Log.Debug(message);
+            Log.Write(LogEventLevel.Debug,message);
         }
 
         public void LogError(string message)
         {
-            Log.Error(message);
+            Log.Write(LogEventLevel.Error, message);
         }
 
         public void LogInfo(string message)
         {
-            Log.Information(message);
+            Log.Write(LogEventLevel.Information, message);
         }
 
         public void LogWarn(string message)
         {
-            Log.Warning(message);
+            Log.Write(LogEventLevel.Warning, message);
         }
     }
 }

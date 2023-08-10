@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Contracts;
+using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
 
 namespace CompanyEmployees.Presentation.Controllers
@@ -8,10 +9,12 @@ namespace CompanyEmployees.Presentation.Controllers
     public class CompaniesController : ControllerBase
     {
         private readonly IService service;
+        private readonly ILoggerManager loggerManager;
 
-        public CompaniesController(IService service)
+        public CompaniesController(IService service, ILoggerManager loggerManager)
         {
             this.service = service;
+            this.loggerManager = loggerManager;
         }
 
         [HttpGet]
@@ -19,6 +22,8 @@ namespace CompanyEmployees.Presentation.Controllers
         {
             try
             {
+                loggerManager.LogInfo("GettAllComapnies method is calling");
+
                 var companies = service.companyService.GetAllCompanies(false);
 
                 return Ok(companies);

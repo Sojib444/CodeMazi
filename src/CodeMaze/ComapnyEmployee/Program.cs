@@ -8,11 +8,10 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 //Serilog Configure
-builder.Host.UseSerilog((ctx, lc) => lc
-    .MinimumLevel.Debug()
-    .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-    .Enrich.FromLogContext()
-    .ReadFrom.Configuration(builder.Configuration));
+
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
 
 // AccesAssembly 
 var assemblyName = Assembly.GetExecutingAssembly().FullName;
@@ -25,15 +24,18 @@ assembly => assembly.MigrationsAssembly(assemblyName)));
 //Register Dependency
 builder.Services.RepositoryConfiguration();
 builder.Services.ServiceConfiguration();
+builder.Services.LoggerConfiguration();
 
 //CQRS configuration
 builder.Services.ConfigureCQRS();
 
-//Add controller Assembly reference
+//controller Assembly reference
 builder.Services.AddControllers()
 .AddApplicationPart(typeof(CompanyEmployees.Presentation.AssemblyReference).Assembly);
 
 var app = builder.Build();
+
+Log.Write(LogEventLevel.Debug, "Application start");
 
 app.UseHttpsRedirection();
 

@@ -2,6 +2,7 @@
 using Repository;
 using Services.Contracts;
 using Services;
+using LoggerService;
 
 namespace ComapnyEmployee.Entension
 {
@@ -34,6 +35,11 @@ namespace ComapnyEmployee.Entension
             services.AddScoped<ICompanyService, ComapnyService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IService, Service>();
+        }
+
+        public static void LoggerConfiguration(this IServiceCollection services)
+        {
+            services.AddSingleton<ILoggerManager, LoggerManager>();
         }
 
     }
