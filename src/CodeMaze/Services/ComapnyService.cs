@@ -17,7 +17,7 @@ namespace Services
         {
             try
             {
-                return unitofWork.companyRepository.GetAllComapniesAsync(trackChange).ToList();
+                return unitofWork.companyRepository.GetAllComapniesAsync(trackChange);
             }
             catch(Exception ex)
             {

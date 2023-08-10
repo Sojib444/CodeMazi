@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Repository;
 using Serilog;
 using Serilog.Events;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,10 +14,13 @@ builder.Host.UseSerilog((ctx, lc) => lc
     .Enrich.FromLogContext()
     .ReadFrom.Configuration(builder.Configuration));
 
+// AccesAssembly 
+var assemblyName = Assembly.GetExecutingAssembly().FullName;
+
 //Database Configuraton
 builder.Services.AddDbContext<RepositoryContext>(option => 
 option.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection"),
-assembly => assembly.MigrationsAssembly("CompanyEmployee")));
+assembly => assembly.MigrationsAssembly(assemblyName)));
 
 //Register Dependency
 builder.Services.RepositoryConfiguration();
