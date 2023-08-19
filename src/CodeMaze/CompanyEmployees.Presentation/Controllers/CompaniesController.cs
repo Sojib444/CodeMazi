@@ -17,20 +17,18 @@ namespace CompanyEmployees.Presentation.Controllers
             this.loggerManager = loggerManager;
         }
 
-        [HttpGet]
+        [HttpGet()]
         public IActionResult GetComapanies()
         {
             try
             {
-                loggerManager.LogInfo("GettAllComapnies method is calling");
+                var company = service.companyService.GetAllCompanies(false);
 
-                var companies = service.companyService.GetAllCompanies(false);
-
-                return Ok(companies);
+                return Ok(company);
             }
-            catch
+            catch (Exception ex)
             {
-                return StatusCode(500, "Internal Server error");
+                return StatusCode(500,"Internal server Error");
             }
         }
     }
