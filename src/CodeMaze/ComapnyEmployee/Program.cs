@@ -1,7 +1,7 @@
 using ComapnyEmployee.Entension;
 using ComapnyEmployee.Extension;
+using LoggerService;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Repository;
 using Serilog;
 using Serilog.Events;
@@ -22,7 +22,7 @@ builder.Services.AddDbContext<RepositoryContext>(option =>
 option.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection"),
 assembly => assembly.MigrationsAssembly(assemblyName)));
 
-//Register Entension method
+//Register Extension method
 builder.Services.RepositoryConfiguration();
 builder.Services.ServiceConfiguration();
 builder.Services.LoggerConfiguration();
@@ -39,6 +39,8 @@ builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 
+app.ConfigureExceptionHandler(new LoggerManager());
+
 Log.Write(LogEventLevel.Debug, "Application start");
 
 app.UseHttpsRedirection();
@@ -50,7 +52,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 //Custom Exception Middleware 
-//app.ConfigureExceptionHandler(new LoggerManager()); //Handling error globaly with built in middlewar.
-app.UseMiddleware<ErrorHandleMiddleWare>();  //using request delegate
+ //Handling error globaly with built in middlewar
 
 app.Run();

@@ -21,22 +21,14 @@ namespace Services
 
         public  IEnumerable<CompanyDTO> GetAllCompanies(bool trackChange)
         {
-            try
-            {
-                var companies = unitofWork.companyRepository.GetAllComapniesAsync(trackChange);
+            var companies = unitofWork.companyRepository.GetAllComapniesAsync(trackChange);
 
-                // var companiesDto = companies.Select(e =>
-                // new CompanyDTO(e.Id,e.Name?? "" ,string.Join(" ",e.Address,e.Country)));
-
+            // var companiesDto = companies.Select(e =>
+            // new CompanyDTO(e.Id,e.Name?? "" ,string.Join(" ",e.Address,e.Country)));
+            throw new Exception();
                 var companiesDto = mapper.Map<IEnumerable<CompanyDTO>>(companies);
 
-                return companiesDto;
-                
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }            
+                return companiesDto;        
         }
     }
 }
