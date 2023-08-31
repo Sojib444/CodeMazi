@@ -13,6 +13,8 @@ namespace ComapnyEmployee.Profiles
 
             CreateMap<Company, CompanyDTO>().ForCtorParam("fullAddress", 
                 opt => opt.MapFrom(x => string.Join(" ", x.Address, x.Country))); // we used it if we have any constructor.
+
+            CreateMap<Employee, EmployeeDTO>();
         }
     }
 }

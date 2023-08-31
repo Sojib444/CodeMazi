@@ -1,7 +1,6 @@
 ﻿using Contracts;
 using Entities.ErrorModel;
 using Microsoft.AspNetCore.Diagnostics;
-using System.Net;
 
 namespace ComapnyEmployee.Extension
 {
@@ -17,11 +16,11 @@ namespace ComapnyEmployee.Extension
 
                     var contexFeature = contex.Features.Get<IExceptionHandlerFeature>();
 
-                    if(contexFeature != null)
+                    if (contexFeature != null)
                     {
                         var error = contexFeature.Error;
 
-                        switch(error)
+                        switch (error)
                         {
                             case NotFoundException foundException:
                                 contex.Response.StatusCode = StatusCodes.Status404NotFound;
@@ -33,7 +32,7 @@ namespace ComapnyEmployee.Extension
 
                         }
 
-                        loggerManager.LogError($"Something went wrong at {contexFeature.Error}");
+                        loggerManager.LogError($"Something went wrong at {contexFeature.Error.Message}");
 
                         await contex.Response.WriteAsync(new ErrorDetails()
                         {

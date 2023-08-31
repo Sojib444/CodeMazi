@@ -74,3 +74,6 @@
    at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
    at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|8_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2023-08-31 13:11:12.829 +06:00 [DBG] Application start
+2023-08-31 13:14:28.955 +06:00 [DBG] Application start
+2023-08-31 13:36:34.452 +06:00 [DBG] Application start

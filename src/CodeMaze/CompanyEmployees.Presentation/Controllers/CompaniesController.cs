@@ -4,7 +4,7 @@ using Services.Contracts;
 
 namespace CompanyEmployees.Presentation.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("v1/api/[controller]")]
     [ApiController]
     public class CompaniesController : ControllerBase
     {
