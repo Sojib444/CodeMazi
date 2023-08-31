@@ -34,7 +34,7 @@ namespace Repository
             return dbSet.ToList();
         }
 
-        public IQueryable<T> FindAllCondition(Expression<Func<T, bool>> expression, bool trackChange)
+        public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression, bool trackChange)
         {
             return !trackChange ? dbSet.Where(expression).AsNoTracking() :
                 dbSet.Where(expression);

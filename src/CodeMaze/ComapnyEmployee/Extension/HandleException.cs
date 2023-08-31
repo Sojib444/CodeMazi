@@ -13,19 +13,32 @@ namespace ComapnyEmployee.Extension
             {
                 error.Run(async contex =>
                 {
-                    contex.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     contex.Response.ContentType = "application/json";
 
                     var contexFeature = contex.Features.Get<IExceptionHandlerFeature>();
 
                     if(contexFeature != null)
                     {
+                        var error = contexFeature.Error;
+
+                        switch(error)
+                        {
+                            case NotFoundException foundException:
+                                contex.Response.StatusCode = StatusCodes.Status404NotFound;
+                                break;
+
+                            default:
+                                contex.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                                break;
+
+                        }
+
                         loggerManager.LogError($"Something went wrong at {contexFeature.Error}");
 
                         await contex.Response.WriteAsync(new ErrorDetails()
                         {
                             StatusCode = contex.Response.StatusCode,
-                            Message = "Internal Servr Error"
+                            Message = contexFeature.Error.Message
                         }.ToString());
                     }
                 });

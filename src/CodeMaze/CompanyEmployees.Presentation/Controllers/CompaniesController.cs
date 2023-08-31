@@ -17,13 +17,21 @@ namespace CompanyEmployees.Presentation.Controllers
             this.loggerManager = loggerManager;
         }
 
-        [HttpGet()]
+        [HttpGet]
         public IActionResult GetComapanies()
         {
-           
+
             var company = service.companyService.GetAllCompanies(false);
 
-            return Ok(company);          
+            return Ok(company);
+        }
+
+        [HttpGet("{id:guid}")]
+        public IActionResult GetCompany(Guid Id)
+        {
+            var company = service.companyService.GetCompany(Id, false);
+
+            return Ok(company);
         }
     }
 }
