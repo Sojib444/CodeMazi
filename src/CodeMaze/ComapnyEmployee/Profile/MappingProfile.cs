@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DataTransferObjects.ComapnyDTO;
+using DataTransferObjects.EmployeeDTO;
 using Entities.Model;
 
 namespace ComapnyEmployee.Profiles
@@ -14,10 +15,15 @@ namespace ComapnyEmployee.Profiles
             CreateMap<Company, CompanyDTO>().ForCtorParam("fullAddress", 
                 opt => opt.MapFrom(x => string.Join(" ", x.Address, x.Country))); // we used it if we have any constructor.
 
-            CreateMap<Employee, EmployeeDTO>();
+            CreateMap<Employee, EmployeeDTO>()
+                .ReverseMap();
 
             CreateMap<CreateCompnyDTO, Company>()
                 .ReverseMap();
+
+            CreateMap<EmployeeForCompanyDTO, Employee>()
+                .ReverseMap();
+
         }
     }
 }

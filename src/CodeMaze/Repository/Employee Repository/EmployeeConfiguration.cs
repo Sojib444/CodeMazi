@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Repository
+namespace Repository.Employeerepository
 {
     public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
     {

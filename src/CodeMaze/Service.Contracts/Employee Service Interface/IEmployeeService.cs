@@ -1,4 +1,5 @@
-﻿using DataTransferObjects.ComapnyDTO;
+﻿using DataTransferObjects.EmployeeDTO;
+using Entities.Model;
 
 namespace Services.Contracts
 {
@@ -6,5 +7,6 @@ namespace Services.Contracts
     {
         IEnumerable<EmployeeDTO> GetAllEmployessDto(Guid ComapanyId, bool trackChange);
         EmployeeDTO GetEmployesDto(Guid ComapanyId, Guid employeeId, bool trackChange);
+        EmployeeDTO CreateEmployee(Guid companyId, EmployeeForCompanyDTO employee,bool trackChange);
     }
 }

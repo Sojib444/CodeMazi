@@ -1,6 +1,6 @@
 ﻿using Contracts;
 
-namespace Repository
+namespace Repository.UnitofWork
 {
     public class ApplicationUniofWork : UnitofWork, IApplicationUnitofWork
     {

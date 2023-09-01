@@ -1,6 +1,7 @@
 ﻿using Contracts;
 using Entities.Model;
 using Microsoft.EntityFrameworkCore;
+using Repository.Employeerepository;
 
 namespace Repository
 {

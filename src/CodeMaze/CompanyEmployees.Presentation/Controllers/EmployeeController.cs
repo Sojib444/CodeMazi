@@ -1,4 +1,5 @@
 ﻿using Contracts;
+using DataTransferObjects.EmployeeDTO;
 using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
 
@@ -31,6 +32,14 @@ namespace CompanyEmployees.Presentation.Controllers
             var employees = service.employeeService.GetEmployesDto(companyId, employeeId, false);
 
             return Ok(employees);
+        }
+
+        [HttpPost]
+        public IActionResult CreateEmployee(Guid companyId,[FromBody] EmployeeForCompanyDTO employeeForCompanyDTO)
+        {
+            var employee = service.employeeService.CreateEmployee(companyId, employeeForCompanyDTO, false);
+
+            return Ok(employee);
         }
     }
 }

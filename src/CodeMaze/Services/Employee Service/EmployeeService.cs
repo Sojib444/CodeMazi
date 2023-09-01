@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Contracts;
-using DataTransferObjects.ComapnyDTO;
+using DataTransferObjects.EmployeeDTO;
 using Entities.ErrorModel;
+using Entities.Model;
 using Services.Contracts;
 
 namespace Services
@@ -15,6 +16,28 @@ namespace Services
         {
             this.unitofWork = unitofWork;
             this.mapper = mapper;
+        }
+
+        public EmployeeDTO CreateEmployee(Guid companyId, EmployeeForCompanyDTO employee, bool trackChange)
+        {
+            var company = unitofWork.companyRepository.GetCompany(companyId, trackChange);
+
+            if(company == null)
+            {
+                throw new CompanyNotFoundException(companyId);
+            }
+
+            var result = mapper.Map<Employee>(employee);
+            result.Id = Guid.NewGuid();
+
+            unitofWork.employeeRepository.EmployeeForCompany(companyId, result);
+            unitofWork.SaveChage();
+            unitofWork.Dispose();
+
+            var response = mapper.Map<EmployeeDTO>(result);
+
+            return response;
+            
         }
 
         public IEnumerable<EmployeeDTO> GetAllEmployessDto(Guid ComapanyId, bool trackChange)
