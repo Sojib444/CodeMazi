@@ -1,4 +1,4 @@
 ﻿namespace DataTransferObjects.ComapnyDTO
 {
-    public record CompanyDTO(string name, string fullAddress);
+    public record CompanyDTO(string name, string fullAddress, string country);
 }

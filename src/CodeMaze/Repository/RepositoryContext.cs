@@ -1,9 +1,10 @@
-﻿using Entities.Model;
+﻿using Contracts;
+using Entities.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace Repository
 {
-    public class RepositoryContext :DbContext
+    public class RepositoryContext :DbContext, IRepositoryContext
     {
         public RepositoryContext(DbContextOptions<RepositoryContext> options) : base(options)
         {

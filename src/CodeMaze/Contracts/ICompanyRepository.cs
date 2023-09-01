@@ -6,5 +6,6 @@ namespace Contracts
     {
         IEnumerable<Company> GetAllComapniesAsync(bool trackChange);
         Company GetCompany(Guid id, bool trackChange);
+        void CreateCompany(Company company);
     }
 }

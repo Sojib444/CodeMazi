@@ -15,6 +15,9 @@ namespace ComapnyEmployee.Profiles
                 opt => opt.MapFrom(x => string.Join(" ", x.Address, x.Country))); // we used it if we have any constructor.
 
             CreateMap<Employee, EmployeeDTO>();
+
+            CreateMap<CreateCompnyDTO, Company>()
+                .ReverseMap();
         }
     }
 }

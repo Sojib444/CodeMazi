@@ -1,13 +1,12 @@
 ﻿using Contracts;
-using Repository;
-using Services.Contracts;
-using Services;
 using LoggerService;
-using ComapnyEmployee.Extension;
+using Repository;
+using Services;
+using Services.Contracts;
 
 namespace ComapnyEmployee.Entension
 {
-    public static  class ServiceExtension
+    public static class ServiceExtension
     {
         public static void ConfigureCQRS(this IServiceCollection service)
         {
@@ -28,7 +27,8 @@ namespace ComapnyEmployee.Entension
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IUnitofWork, UnitofWork>();
-            services.AddScoped<RepositoryContext>();
+            services.AddScoped<IRepositoryContext, RepositoryContext>();
+            services.AddScoped<IApplicationUnitofWork, ApplicationUniofWork>();
         }
 
         public static void ServiceConfiguration(this IServiceCollection services)

@@ -4,21 +4,20 @@ namespace Repository
 {
     public class UnitofWork : IUnitofWork
     {
-        public ICompanyRepository companyRepository { get ; set ; }
-        public IEmployeeRepository employeeRepository { get; set; }
-        private RepositoryContext repositoryContext { get; set; }
+        private readonly RepositoryContext repositoryContext;
 
-        public UnitofWork(ICompanyRepository companyRepository, 
-            IEmployeeRepository employeeRepository, RepositoryContext repositoryContext)
+        public UnitofWork(RepositoryContext repositoryContext)
         {
-            this.companyRepository = companyRepository;
-            this.employeeRepository = employeeRepository;
             this.repositoryContext = repositoryContext;
         }
-
-        public async Task SaveChage()
+        public void Dispose()
         {
-            await repositoryContext.SaveChangesAsync();
+            repositoryContext.Dispose();
+        }
+
+        public void SaveChage()
+        {
+            repositoryContext.SaveChanges();
         }
     }
 }

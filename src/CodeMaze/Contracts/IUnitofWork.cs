@@ -1,9 +1,7 @@
 ﻿namespace Contracts
 {
-    public interface IUnitofWork
+    public interface IUnitofWork : IDisposable
     {
-        ICompanyRepository companyRepository { get; set; }  
-        IEmployeeRepository employeeRepository { get; set; }
-        Task SaveChage();        
+        void SaveChage();        
     }
 }

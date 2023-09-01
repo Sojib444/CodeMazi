@@ -18,5 +18,10 @@ namespace Entities.Model
         public string? Country { get; set; }
         public ICollection<Employee>? Employees { get; set; }
 
+        public Company()
+        {
+            Id = new Guid();    
+        }
+
     }
 }

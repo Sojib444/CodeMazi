@@ -8,10 +8,10 @@ namespace Services
 {
     public class EmployeeService : IEmployeeService
     {
-        private readonly IUnitofWork unitofWork;
+        private readonly IApplicationUnitofWork unitofWork;
         private readonly IMapper mapper;
 
-        public EmployeeService(IUnitofWork unitofWork, IMapper mapper)
+        public EmployeeService(IApplicationUnitofWork unitofWork, IMapper mapper)
         {
             this.unitofWork = unitofWork;
             this.mapper = mapper;

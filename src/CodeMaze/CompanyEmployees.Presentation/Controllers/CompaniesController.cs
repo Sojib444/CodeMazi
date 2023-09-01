@@ -1,4 +1,5 @@
 ﻿using Contracts;
+using DataTransferObjects.ComapnyDTO;
 using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
 
@@ -18,7 +19,7 @@ namespace CompanyEmployees.Presentation.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetComapanies()
+        public IActionResult GetCompanies()
         {
 
             var company = service.companyService.GetAllCompanies(false);
@@ -33,5 +34,14 @@ namespace CompanyEmployees.Presentation.Controllers
 
             return Ok(company);
         }
+
+        [HttpPost]
+        public IActionResult CerateCompany([FromBody] CreateCompnyDTO createCompnyDTO)
+        {
+           var newCompany = service.companyService.CreateComany(createCompnyDTO);
+
+            return Ok(newCompany);
+        }
+
     }
 }

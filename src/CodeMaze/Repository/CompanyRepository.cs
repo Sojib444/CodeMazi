@@ -10,6 +10,11 @@ namespace Repository
 
         }
 
+        public void CreateCompany(Company company)
+        {
+            Create(company);
+        }
+
         public IEnumerable<Company> GetAllComapniesAsync(bool trackChange)
         {
             return  FinaAll(trackChange).OrderBy(e => e.Name).ToList();

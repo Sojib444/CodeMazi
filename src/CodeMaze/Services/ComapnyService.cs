@@ -9,15 +9,26 @@ namespace Services
 {
     public class ComapnyService : ICompanyService
     {
-        private readonly IUnitofWork unitofWork;
+        private readonly IApplicationUnitofWork unitofWork;
         private readonly ILoggerManager loggerManager;
         private readonly IMapper mapper;
 
-        public ComapnyService(IUnitofWork unitofWork,ILoggerManager loggerManager,IMapper mapper)
+        public ComapnyService(IApplicationUnitofWork unitofWork,ILoggerManager loggerManager,IMapper mapper)
         {
             this.unitofWork = unitofWork;
             this.loggerManager = loggerManager;
             this.mapper = mapper;
+        }
+
+        public CreateCompnyDTO CreateComany(CreateCompnyDTO creatCompanyDTO)
+        {
+            var comapny = mapper.Map<Company>(creatCompanyDTO);
+            comapny.Id = Guid.NewGuid();
+
+            unitofWork.companyRepository.CreateCompany(comapny);
+            unitofWork.SaveChage();
+
+            return mapper.Map<CreateCompnyDTO>(comapny);
         }
 
         public  IEnumerable<CompanyDTO> GetAllCompanies(bool trackChange)
@@ -43,8 +54,7 @@ namespace Services
            
             var companyDto = mapper.Map<CompanyDTO>(company);
 
-            return companyDto;
-            
+            return companyDto;            
         }
     }
 }
