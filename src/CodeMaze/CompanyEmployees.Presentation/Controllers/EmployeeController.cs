@@ -35,7 +35,7 @@ namespace CompanyEmployees.Presentation.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateEmployee(Guid companyId,[FromBody] EmployeeForCompanyDTO employeeForCompanyDTO)
+        public IActionResult CreateEmployeeForComany(Guid companyId,[FromBody] EmployeeForCompanyDTO employeeForCompanyDTO)
         {
             var employee = service.employeeService.CreateEmployee(companyId, employeeForCompanyDTO, false);
 

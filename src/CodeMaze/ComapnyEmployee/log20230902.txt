@@ -1,0 +1,5 @@
+2023-09-02 11:22:58.066 +06:00 [DBG] Application start
+2023-09-02 11:27:47.823 +06:00 [DBG] Application start
+2023-09-02 11:29:19.810 +06:00 [DBG] Application start
+2023-09-02 11:35:33.875 +06:00 [DBG] Application start
+2023-09-02 11:41:57.152 +06:00 [ERR] Something went wrong at There are no Employess in this comapany. Company Id c9d4c053-49b6-410c-bc78-2d54a9991870 

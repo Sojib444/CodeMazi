@@ -23,7 +23,6 @@ namespace Services
         public CreateCompnyDTO CreateComany(CreateCompnyDTO creatCompanyDTO)
         {
             var comapny = mapper.Map<Company>(creatCompanyDTO);
-            comapny.Id = Guid.NewGuid();
 
             unitofWork.companyRepository.CreateCompany(comapny);
             unitofWork.SaveChage();
