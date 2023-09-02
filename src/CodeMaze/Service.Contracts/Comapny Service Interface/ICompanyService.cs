@@ -1,4 +1,5 @@
 ﻿using DataTransferObjects.ComapnyDTO;
+using DataTransferObjects.ComapnyDTOs;
 
 namespace Services.Contracts
 {

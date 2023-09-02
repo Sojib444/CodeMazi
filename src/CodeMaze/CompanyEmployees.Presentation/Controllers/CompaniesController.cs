@@ -1,5 +1,6 @@
 ﻿using Contracts;
 using DataTransferObjects.ComapnyDTO;
+using DataTransferObjects.ComapnyDTOs;
 using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
 
@@ -42,6 +43,5 @@ namespace CompanyEmployees.Presentation.Controllers
 
             return Ok(newCompany);
         }
-
     }
 }

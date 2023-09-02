@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Contracts;
 using DataTransferObjects.ComapnyDTO;
+using DataTransferObjects.ComapnyDTOs;
 using Entities.ErrorModel;
 using Entities.Model;
 using Services.Contracts;

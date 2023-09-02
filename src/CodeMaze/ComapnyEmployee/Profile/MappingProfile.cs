@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DataTransferObjects.ComapnyDTO;
+using DataTransferObjects.ComapnyDTOs;
 using DataTransferObjects.EmployeeDTO;
 using Entities.Model;
 
