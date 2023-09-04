@@ -40,6 +40,27 @@ namespace Services
             
         }
 
+        public void DeleteEmployee(Guid companyID, Guid employeeID,bool trackChange)
+        {
+            var comapny = unitofWork.companyRepository.GetCompany(companyID, trackChange);
+
+            if(comapny == null)
+            {
+                throw new CompanyNotFoundException(companyID);
+            }
+
+            var employee = unitofWork.employeeRepository.GetEmployee(companyID,employeeID,trackChange).SingleOrDefault();
+
+            if(employee == null)
+            {
+                throw new EmployeesNotFoundException(employeeID);
+            }
+
+            unitofWork.employeeRepository.DeleteEmployee(employee);
+            unitofWork.SaveChage();
+            unitofWork.Dispose();
+        }
+
         public IEnumerable<EmployeeDTO> GetAllEmployessDto(Guid ComapanyId, bool trackChange)
         {
             var employees = unitofWork.employeeRepository.GetAllEmployees(ComapanyId, trackChange);

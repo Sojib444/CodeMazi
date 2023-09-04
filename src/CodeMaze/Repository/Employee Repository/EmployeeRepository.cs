@@ -29,5 +29,10 @@ namespace Repository.Employeerepository
             return FindByCondition(emp => emp.CompanyId.Equals(CompanyId)
                                 && emp.Id == employeeId, false).ToList();
         }
+
+        public void DeleteEmployee(Employee employee)
+        {
+            Delete(employee);
+        }
     }
 }

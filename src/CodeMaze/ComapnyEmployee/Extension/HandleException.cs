@@ -1,5 +1,6 @@
 ﻿using Contracts;
 using Entities.ErrorModel;
+using Entities.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 
 namespace ComapnyEmployee.Extension
@@ -23,6 +24,10 @@ namespace ComapnyEmployee.Extension
                         switch (error)
                         {
                             case NotFoundException foundException:
+                                contex.Response.StatusCode = StatusCodes.Status404NotFound;
+                                break;
+
+                            case BadRequestException badRequestException:
                                 contex.Response.StatusCode = StatusCodes.Status404NotFound;
                                 break;
 

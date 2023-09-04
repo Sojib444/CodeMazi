@@ -24,5 +24,15 @@ namespace Repository
         {
            return FindByCondition(company => company.Id.Equals(id), false).SingleOrDefault();
         }
+
+        public List<Company> GetAllCompanyCollection(IEnumerable<Guid> ids, bool trackChage)
+        {
+           return FindByCondition(x => ids.Contains(x.Id), trackChage).ToList();
+        }
+
+        public void DeleteComapny(Company company, bool trackChange)
+        {
+            Delete(company);
+        }
     }
 }

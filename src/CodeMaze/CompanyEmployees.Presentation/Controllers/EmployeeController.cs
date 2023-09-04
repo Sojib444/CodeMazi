@@ -41,5 +41,13 @@ namespace CompanyEmployees.Presentation.Controllers
 
             return Ok(employee);
         }
+
+        [HttpDelete("{employeeId}")]
+        public IActionResult DeleteEmployee(Guid companyId,Guid employeeId,bool trackChange)
+        {
+            service.employeeService.DeleteEmployee(companyId, employeeId, false);
+
+            return NoContent();
+        }
     }
 }

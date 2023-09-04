@@ -4,3 +4,25 @@
 2023-09-02 11:35:33.875 +06:00 [DBG] Application start
 2023-09-02 11:41:57.152 +06:00 [ERR] Something went wrong at There are no Employess in this comapany. Company Id c9d4c053-49b6-410c-bc78-2d54a9991870 
 2023-09-02 12:20:20.342 +06:00 [DBG] Application start
+2023-09-02 16:45:28.578 +06:00 [DBG] Application start
+2023-09-02 16:54:26.089 +06:00 [DBG] Application start
+2023-09-02 16:54:55.400 +06:00 [DBG] Application start
+2023-09-02 16:55:08.190 +06:00 [ERR] Something went wrong at No route matches the supplied values.
+2023-09-02 16:55:33.978 +06:00 [ERR] Something went wrong at No route matches the supplied values.
+2023-09-02 16:56:33.493 +06:00 [ERR] Something went wrong at No route matches the supplied values.
+2023-09-02 16:56:49.309 +06:00 [ERR] Something went wrong at No route matches the supplied values.
+2023-09-02 16:58:35.977 +06:00 [DBG] Application start
+2023-09-02 16:59:11.101 +06:00 [ERR] Something went wrong at No route matches the supplied values.
+2023-09-02 17:03:33.192 +06:00 [DBG] Application start
+2023-09-02 17:07:21.858 +06:00 [DBG] Application start
+2023-09-02 17:07:47.622 +06:00 [ERR] Something went wrong at No route matches the supplied values.
+2023-09-02 17:09:34.616 +06:00 [ERR] Something went wrong at No route matches the supplied values.
+2023-09-02 17:13:09.698 +06:00 [DBG] Application start
+2023-09-02 17:13:47.510 +06:00 [ERR] Something went wrong at No route matches the supplied values.
+2023-09-02 19:25:31.971 +06:00 [DBG] Application start
+2023-09-02 19:27:15.230 +06:00 [ERR] Something went wrong at No route matches the supplied values.
+2023-09-02 19:30:26.204 +06:00 [DBG] Application start
+2023-09-02 19:31:32.447 +06:00 [DBG] Application start
+2023-09-02 19:33:39.534 +06:00 [DBG] Application start
+2023-09-02 19:36:07.416 +06:00 [DBG] Application start
+2023-09-02 19:37:03.290 +06:00 [DBG] Application start

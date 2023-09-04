@@ -8,5 +8,6 @@ namespace Services.Contracts
         IEnumerable<EmployeeDTO> GetAllEmployessDto(Guid ComapanyId, bool trackChange);
         EmployeeDTO GetEmployesDto(Guid ComapanyId, Guid employeeId, bool trackChange);
         EmployeeDTO CreateEmployee(Guid companyId, EmployeeForCompanyDTO employee,bool trackChange);
+        void DeleteEmployee(Guid companyID,Guid employeeID,bool trackChange);
     }
 }

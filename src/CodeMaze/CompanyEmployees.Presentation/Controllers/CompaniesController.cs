@@ -1,5 +1,5 @@
-﻿using Contracts;
-using DataTransferObjects.ComapnyDTO;
+﻿using CompanyEmployees.Presentation.ModelBinders;
+using Contracts;
 using DataTransferObjects.ComapnyDTOs;
 using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
@@ -39,9 +39,34 @@ namespace CompanyEmployees.Presentation.Controllers
         [HttpPost]
         public IActionResult CerateCompany([FromBody] CreateCompnyDTO createCompnyDTO)
         {
-           var newCompany = service.companyService.CreateComany(createCompnyDTO);
+            var newCompany = service.companyService.CreateComany(createCompnyDTO);
 
             return Ok(newCompany);
+        }
+
+        [HttpDelete("{id:guid}")]
+        public IActionResult DeleCompany(Guid id)
+        {
+            service.companyService.DeleteComany(id, false);
+
+            return NoContent();
+        }
+
+        [HttpGet("collection/{ids}", Name = "CompnyCollection")]
+        public IActionResult GetCompanieyCollection([ModelBinder(BinderType =
+                 typeof(ArrayModelBinder))]IEnumerable<Guid> ids, bool trakChange)
+        {
+            var companyCollection = service.companyService.GetAllCompanyCollection(ids, false);
+
+            return Ok(companyCollection);
+        }
+
+        [HttpPost("collection")]
+        public IActionResult CreateCompanieyCollection([FromBody] IEnumerable<CreateCompnyDTO> compnyDTOs)
+        {
+            var result = service.companyService.CreateCompnyCollection(compnyDTOs);
+
+            return CreatedAtRoute("compnyDTOs", new { result.ids }, result.comapnies);
         }
     }
 }
