@@ -70,7 +70,7 @@ namespace CompanyEmployees.Presentation.Controllers
             return CreatedAtRoute("compnyDTOs", new { result.ids }, result.comapnies);
         }
 
-        [HttpPut("id:guid")]
+        [HttpPut("{id:guid}")]
         public IActionResult UpdateCompany(Guid id, [FromBody] UpdateCompanyDTO updateCompanyDTO)
         {
             service.companyService.UpdateCompany(id, updateCompanyDTO, true);
