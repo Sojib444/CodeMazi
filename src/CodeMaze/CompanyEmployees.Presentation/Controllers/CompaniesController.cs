@@ -1,5 +1,6 @@
 ﻿using CompanyEmployees.Presentation.ModelBinders;
 using Contracts;
+using DataTransferObjects.ComapnyDTO;
 using DataTransferObjects.ComapnyDTOs;
 using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
@@ -67,6 +68,14 @@ namespace CompanyEmployees.Presentation.Controllers
             var result = service.companyService.CreateCompnyCollection(compnyDTOs);
 
             return CreatedAtRoute("compnyDTOs", new { result.ids }, result.comapnies);
+        }
+
+        [HttpPut("id:guid")]
+        public IActionResult UpdateCompany(Guid id, [FromBody] UpdateCompanyDTO updateCompanyDTO)
+        {
+            service.companyService.UpdateCompany(id, updateCompanyDTO, true);
+
+            return NoContent();
         }
     }
 }

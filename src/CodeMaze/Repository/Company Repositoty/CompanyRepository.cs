@@ -34,5 +34,10 @@ namespace Repository
         {
             Delete(company);
         }
+
+        public Company UpdateCompany(Guid companyID, bool trackChange)
+        {
+            return FindByCondition(emp => emp.Id.Equals(companyID), trackChange).SingleOrDefault(); 
+        }
     }
 }

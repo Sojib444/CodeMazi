@@ -25,6 +25,8 @@ namespace ComapnyEmployee.Profiles
             CreateMap<EmployeeForCompanyDTO, Employee>()
                 .ReverseMap();
 
+            CreateMap<Company, UpdateCompanyDTO>()
+                .ReverseMap();
         }
     }
 }

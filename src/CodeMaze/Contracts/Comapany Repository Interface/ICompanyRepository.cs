@@ -9,5 +9,6 @@ namespace Contracts
         void CreateCompany(Company company);
         List<Company> GetAllCompanyCollection(IEnumerable<Guid> ids, bool trackChage);
         void DeleteComapny(Company company,bool trackChange);
+        Company UpdateCompany(Guid companyID, bool trackChange);
     }
 }

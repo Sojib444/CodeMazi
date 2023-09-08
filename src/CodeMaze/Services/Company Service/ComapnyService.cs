@@ -115,5 +115,20 @@ namespace Services
             unitofWork.SaveChage();
             unitofWork.Dispose();
         }
+
+        public void UpdateCompany(Guid ComaPanyId,UpdateCompanyDTO updateCompanyDTO, bool trackChange)
+        {
+            var company = unitofWork.companyRepository.UpdateCompany(ComaPanyId, trackChange);
+
+            if(company == null)
+            {
+                throw new CompanyNotFoundException(ComaPanyId);
+            }
+
+            mapper.Map(updateCompanyDTO, company);
+
+            unitofWork.SaveChage();
+            unitofWork.Dispose();
+        }
     }
 }

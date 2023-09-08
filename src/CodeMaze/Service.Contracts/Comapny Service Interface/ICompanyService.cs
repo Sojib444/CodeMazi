@@ -11,5 +11,6 @@ namespace Services.Contracts
         IEnumerable<CompanyDTO> GetAllCompanyCollection(IEnumerable<Guid> ids, bool trackChage);
         (IEnumerable<CompanyDTO> comapnies, string ids) CreateCompnyCollection(IEnumerable<CreateCompnyDTO> companycllection);
         void DeleteComany(Guid companyId, bool trackChange);
+        void UpdateCompany(Guid ComaPanyId,UpdateCompanyDTO updateCompanyDTO, bool trackChange);
     }
 }
