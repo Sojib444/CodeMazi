@@ -1,7 +1,10 @@
 using ComapnyEmployee.Entension;
 using ComapnyEmployee.Extension;
 using LoggerService;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Repository;
 using Serilog;
 using Serilog.Events;
@@ -30,8 +33,22 @@ builder.Services.LoggerConfiguration();
 //CQRS configuration
 builder.Services.ConfigureCQRS();
 
+//jsonPatch Configuration
+NewtonsoftJsonPatchInputFormatter GetJsonPatchInputFormatter() =>
+new ServiceCollection().AddLogging().AddMvc().AddNewtonsoftJson()
+.Services.BuildServiceProvider()
+.GetRequiredService<IOptions<MvcOptions>>().Value.InputFormatters
+.OfType<NewtonsoftJsonPatchInputFormatter>().First();
+
+
 //controller Assembly reference
-builder.Services.AddControllers()
+builder.Services.AddControllers(config =>
+{
+    config.RespectBrowserAcceptHeader = true;
+    config.ReturnHttpNotAcceptable = true;
+    config.InputFormatters.Insert(0, GetJsonPatchInputFormatter());
+})
+.AddXmlDataContractSerializerFormatters()
 .AddApplicationPart(typeof(CompanyEmployees.Presentation.AssemblyReference).Assembly);
 
 //Add Automapper
