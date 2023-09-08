@@ -89,5 +89,33 @@ namespace Services
 
             return employeeDto;
         }
+
+        public (UpdateEmployee employeeToPatch, Employee employeeEntity)GetEmployeeForPatch(Guid companyId, Guid id,
+                                                                   bool compTrackChanges, bool empTrackChanges)
+        {
+            var company = unitofWork.companyRepository.GetCompany(companyId, compTrackChanges);
+
+            if (company is null)
+                throw new CompanyNotFoundException(companyId);
+
+            var employeeEntity = unitofWork.employeeRepository.GetEmployee(companyId, id,
+            empTrackChanges).SingleOrDefault();
+
+            if (employeeEntity is null)
+                throw new EmployeesNotFoundException(companyId);
+
+            var employeeToPatch = mapper.Map<UpdateEmployee>(employeeEntity);
+
+            return (employeeToPatch, employeeEntity);
+        }
+
+        public void SaveChangesForPatch(UpdateEmployee employeeToPatch, Employee employeeEntity)
+        {
+            mapper.Map(employeeToPatch, employeeEntity);
+
+            unitofWork.SaveChage();
+            unitofWork.Dispose();
+        }
+
     }
 }
