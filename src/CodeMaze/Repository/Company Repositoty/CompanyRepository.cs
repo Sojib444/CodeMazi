@@ -1,4 +1,5 @@
 ﻿using Contracts;
+using DataTransferObjects.RequestFeatures;
 using Entities.Model;
 
 namespace Repository
@@ -15,9 +16,9 @@ namespace Repository
             Create(company);
         }
 
-        public IEnumerable<Company> GetAllComapniesAsync(bool trackChange)
+        public IEnumerable<Company> GetAllComapniesAsync(RequestParameters requestParameters, bool trackChange)
         {
-            return  FinaAll(trackChange).OrderBy(e => e.Name).ToList();
+            return FinaAll(requestParameters,trackChange);
         }
 
         public Company GetCompany(Guid id, bool trackChange)

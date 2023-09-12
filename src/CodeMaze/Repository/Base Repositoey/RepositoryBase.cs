@@ -1,4 +1,5 @@
 ﻿using Contracts;
+using DataTransferObjects.RequestFeatures;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -12,11 +13,11 @@ namespace Repository
         public RepositoryBase(RepositoryContext repositoryContext)
         {
             _repositoryContext = repositoryContext;
-            dbSet = _repositoryContext.Set<T>();           
+            dbSet = _repositoryContext.Set<T>();
         }
         public void Create(T entity)
         {
-            dbSet.Add(entity);            
+            dbSet.Add(entity);
         }
 
         public void Delete(T entity)
@@ -29,9 +30,12 @@ namespace Repository
             dbSet.Update(entity);
         }
 
-        public IEnumerable<T> FinaAll(bool trackChange)
+        public IEnumerable<T> FinaAll(RequestParameters requestParameters, bool trackChange)
         {
-            return dbSet.ToList();
+            return !trackChange ? dbSet.Skip((requestParameters.pageNumber - 1) * requestParameters.pageSize).
+                Take(requestParameters.pageSize)
+                .AsNoTracking() : dbSet.Skip((requestParameters.pageNumber - 1) * requestParameters.pageSize).
+                Take(requestParameters.pageSize);
         }
 
         public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression, bool trackChange)

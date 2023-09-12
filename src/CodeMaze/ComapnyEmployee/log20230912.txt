@@ -1,0 +1,18 @@
+2023-09-12 10:45:01.003 +06:00 [DBG] Application start
+2023-09-12 10:47:13.579 +06:00 [DBG] Application start
+2023-09-12 10:48:24.392 +06:00 [ERR] Something went wrong at The method or operation is not implemented.
+2023-09-12 10:49:37.594 +06:00 [DBG] Application start
+2023-09-12 10:50:54.361 +06:00 [DBG] Application start
+2023-09-12 10:51:13.504 +06:00 [DBG] Application start
+2023-09-12 10:51:32.474 +06:00 [DBG] Application start
+2023-09-12 11:21:53.768 +06:00 [DBG] Application start
+2023-09-12 13:14:37.414 +06:00 [DBG] Application start
+2023-09-12 13:21:41.753 +06:00 [DBG] Application start
+2023-09-12 13:22:17.601 +06:00 [DBG] Application start
+2023-09-12 13:24:40.870 +06:00 [DBG] Application start
+2023-09-12 13:25:59.327 +06:00 [DBG] Application start
+2023-09-12 13:26:08.733 +06:00 [DBG] Application start
+2023-09-12 13:27:02.411 +06:00 [DBG] Application start
+2023-09-12 13:27:29.273 +06:00 [DBG] Application start
+2023-09-12 13:29:11.895 +06:00 [DBG] Application start
+2023-09-12 13:30:43.333 +06:00 [DBG] Application start

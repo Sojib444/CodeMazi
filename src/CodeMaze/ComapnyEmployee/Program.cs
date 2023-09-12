@@ -1,5 +1,6 @@
 using ComapnyEmployee.Entension;
 using ComapnyEmployee.Extension;
+using CompanyEmployees.Presentation.ActionsFilters;
 using LoggerService;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
@@ -32,6 +33,9 @@ builder.Services.LoggerConfiguration();
 
 //CQRS configuration
 builder.Services.ConfigureCQRS();
+
+//configure the filters
+//builder.Services.AddScoped<ValidateFilterAttribute>();
 
 //jsonPatch Configuration
 NewtonsoftJsonPatchInputFormatter GetJsonPatchInputFormatter() =>

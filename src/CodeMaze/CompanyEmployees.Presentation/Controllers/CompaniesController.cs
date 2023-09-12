@@ -2,6 +2,7 @@
 using Contracts;
 using DataTransferObjects.ComapnyDTO;
 using DataTransferObjects.ComapnyDTOs;
+using DataTransferObjects.RequestFeatures;
 using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
 
@@ -21,10 +22,9 @@ namespace CompanyEmployees.Presentation.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetCompanies()
+        public IActionResult GetCompanies([FromQuery] ComapnyParameters companyParameters)
         {
-
-            var company = service.companyService.GetAllCompanies(false);
+            var company = service.companyService.GetAllCompanies(companyParameters, false);
 
             return Ok(company);
         }
