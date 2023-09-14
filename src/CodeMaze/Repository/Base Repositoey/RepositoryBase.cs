@@ -12,7 +12,7 @@ namespace Repository
 
         public RepositoryBase(RepositoryContext repositoryContext)
         {
-            _repositoryContext = repositoryContext;
+            _repositoryContext = repositoryContext; 
             dbSet = _repositoryContext.Set<T>();
         }
         public void Create(T entity)
@@ -32,10 +32,13 @@ namespace Repository
 
         public IEnumerable<T> FinaAll(RequestParameters requestParameters, bool trackChange)
         {
-            return !trackChange ? dbSet.Skip((requestParameters.pageNumber - 1) * requestParameters.pageSize).
-                Take(requestParameters.pageSize)
-                .AsNoTracking() : dbSet.Skip((requestParameters.pageNumber - 1) * requestParameters.pageSize).
-                Take(requestParameters.pageSize);
+            //return !trackChange ? dbSet.Skip((requestParameters.pageNumber - 1) * requestParameters.pageSize).
+            //    Take(requestParameters.pageSize)
+            //    .AsNoTracking() : dbSet.Skip((requestParameters.pageNumber - 1) * requestParameters.pageSize).
+            //    Take(requestParameters.pageSize);
+
+            return !trackChange ? dbSet.ToList() 
+                : dbSet.ToList();
         }
 
         public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression, bool trackChange)

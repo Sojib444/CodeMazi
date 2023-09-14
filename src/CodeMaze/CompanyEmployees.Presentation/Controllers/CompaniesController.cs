@@ -5,6 +5,7 @@ using DataTransferObjects.ComapnyDTOs;
 using DataTransferObjects.RequestFeatures;
 using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
+using System.Text.Json;
 
 namespace CompanyEmployees.Presentation.Controllers
 {
@@ -26,7 +27,9 @@ namespace CompanyEmployees.Presentation.Controllers
         {
             var company = service.companyService.GetAllCompanies(companyParameters, false);
 
-            return Ok(company);
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(company.metaData));
+
+            return Ok(company.Item1);
         }
 
         [HttpGet("{id:guid}")]

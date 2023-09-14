@@ -13,8 +13,10 @@ namespace ComapnyEmployee.Entension
         public static void ConfigureCQRS(this IServiceCollection service)
         {
             service.AddCors(action => action.AddPolicy("poliicy", builder =>
-                                   builder.AllowAnyOrigin().
-                                   AllowAnyHeader()));
+                                   builder.AllowAnyOrigin()
+                                   .AllowAnyMethod()
+                                   .AllowAnyHeader()
+                                   .WithExposedHeaders("X-Pagination")));
         }
 
         public static void ConfigureCQRS1(this IServiceCollection service)

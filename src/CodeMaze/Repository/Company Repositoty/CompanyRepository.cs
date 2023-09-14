@@ -1,6 +1,7 @@
 ﻿using Contracts;
 using DataTransferObjects.RequestFeatures;
 using Entities.Model;
+using Entities.RequestFeatures;
 
 namespace Repository
 {
@@ -16,9 +17,11 @@ namespace Repository
             Create(company);
         }
 
-        public IEnumerable<Company> GetAllComapniesAsync(RequestParameters requestParameters, bool trackChange)
+        public PagedList<Company> GetAllComapniesAsync(RequestParameters requestParameters, bool trackChange)
         {
-            return FinaAll(requestParameters,trackChange);
+            var comapany = FinaAll(requestParameters,trackChange);
+
+            return PagedList<Company>.ToPadgedList(comapany, requestParameters.pageNumber, requestParameters.pageSize);
         }
 
         public Company GetCompany(Guid id, bool trackChange)

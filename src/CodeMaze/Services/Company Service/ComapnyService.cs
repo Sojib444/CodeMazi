@@ -6,6 +6,7 @@ using DataTransferObjects.RequestFeatures;
 using Entities.ErrorModel;
 using Entities.Exceptions;
 using Entities.Model;
+using Entities.RequestFeatures;
 using Services.Contracts;
 
 namespace Services
@@ -33,7 +34,7 @@ namespace Services
             return mapper.Map<CreateCompnyDTO>(comapny);
         }
 
-        public  IEnumerable<CompanyDTO> GetAllCompanies(ComapnyParameters comapnyParameters, bool trackChange)
+        public  (IEnumerable<CompanyDTO>, MetaData metaData) GetAllCompanies(ComapnyParameters comapnyParameters, bool trackChange)
         {
             var companies = unitofWork.companyRepository.GetAllComapniesAsync(comapnyParameters, trackChange);
 
@@ -42,7 +43,7 @@ namespace Services
 
             var companiesDto = mapper.Map<IEnumerable<CompanyDTO>>(companies);
 
-            return companiesDto;        
+            return (companiesDto, companies.metaData);        
         }
 
         public CompanyDTO GetCompany(Guid Id, bool trackChange)
