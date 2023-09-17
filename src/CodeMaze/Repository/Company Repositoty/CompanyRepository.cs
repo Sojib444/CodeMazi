@@ -2,6 +2,7 @@
 using DataTransferObjects.RequestFeatures;
 using Entities.Model;
 using Entities.RequestFeatures;
+using Repository.Extension;
 
 namespace Repository
 {
@@ -17,9 +18,10 @@ namespace Repository
             Create(company);
         }
 
-        public PagedList<Company> GetAllComapniesAsync(RequestParameters requestParameters, bool trackChange)
+        public PagedList<Company> GetAllComapniesAsync(ComapnyParameters requestParameters, bool trackChange)
         {
-            var comapany = FinaAll(requestParameters,trackChange);
+            var comapany = FindByCondition(e => e.Country == requestParameters.Country, trackChange)
+                .SearchCompany(requestParameters.Name);
 
             return PagedList<Company>.ToPadgedList(comapany, requestParameters.pageNumber, requestParameters.pageSize);
         }

@@ -6,7 +6,7 @@ namespace Contracts
 {
     public interface ICompanyRepository
     {
-        PagedList<Company> GetAllComapniesAsync(RequestParameters requestParameters, bool trackChange);
+        PagedList<Company> GetAllComapniesAsync(ComapnyParameters requestParameters, bool trackChange);
         Company GetCompany(Guid id, bool trackChange);
         void CreateCompany(Company company);
         List<Company> GetAllCompanyCollection(IEnumerable<Guid> ids, bool trackChage);

@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompanyEmployees.Presentati
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{C18D0F81-183F-4E16-96F5-6C6EAA36DC26}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DTOs", "DTOs", "{EFAA9D6A-4B26-429D-9D1F-D289C4FA54CA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared DTOs", "Shared DTOs", "{EFAA9D6A-4B26-429D-9D1F-D289C4FA54CA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTransferObjects", "DataTransferObjects\DataTransferObjects.csproj", "{424993ED-7344-457A-9505-96098F6A2EE6}"
 EndProject
