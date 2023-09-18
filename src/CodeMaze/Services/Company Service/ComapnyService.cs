@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Contracts;
+using Contracts.Data_Shaper;
 using DataTransferObjects.ComapnyDTO;
 using DataTransferObjects.ComapnyDTOs;
 using DataTransferObjects.RequestFeatures;
@@ -16,12 +17,15 @@ namespace Services
         private readonly IApplicationUnitofWork unitofWork;
         private readonly ILoggerManager loggerManager;
         private readonly IMapper mapper;
+        public IDataShaper<CompanyDTO> dataShaper { get; }
 
-        public ComapnyService(IApplicationUnitofWork unitofWork,ILoggerManager loggerManager,IMapper mapper)
+        public ComapnyService(IApplicationUnitofWork unitofWork,ILoggerManager loggerManager,
+            IMapper mapper, IDataShaper<CompanyDTO> dataShaper)
         {
             this.unitofWork = unitofWork;
             this.loggerManager = loggerManager;
             this.mapper = mapper;
+            this.dataShaper = dataShaper;
         }
 
         public CreateCompnyDTO CreateComany(CreateCompnyDTO creatCompanyDTO)
@@ -43,7 +47,9 @@ namespace Services
 
             var companiesDto = mapper.Map<IEnumerable<CompanyDTO>>(companies);
 
-            return (companiesDto, companies.metaData);        
+            var companyShapeData = dataShaper.ShapeData(companiesDto, comapnyParameters.fields);
+
+            return ((IEnumerable<CompanyDTO>)companyShapeData, companies.metaData);        
         }
 
         public CompanyDTO GetCompany(Guid Id, bool trackChange)
