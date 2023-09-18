@@ -10,5 +10,8 @@
             get { return _pageSize; }
             set { _pageSize = value > maxPagesixe ? maxPagesixe : value; }
         }
+
+        public string Orderby { get; set; }
+        public string fields { get; set; }
     }
 }

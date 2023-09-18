@@ -21,7 +21,8 @@ namespace Repository
         public PagedList<Company> GetAllComapniesAsync(ComapnyParameters requestParameters, bool trackChange)
         {
             var comapany = FindByCondition(e => e.Country == requestParameters.Country, trackChange)
-                .SearchCompany(requestParameters.Name);
+                .SearchCompany(requestParameters.Name)
+                .Sort(requestParameters.Orderby) ;
 
             return PagedList<Company>.ToPadgedList(comapany, requestParameters.pageNumber, requestParameters.pageSize);
         }

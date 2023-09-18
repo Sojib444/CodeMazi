@@ -41,10 +41,10 @@ namespace Repository
                 : dbSet.ToList();
         }
 
-        public IEnumerable<T> FindByCondition(Expression<Func<T, bool>> expression, bool trackChange)
+        public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression, bool trackChange)
         {
-            return !trackChange ? dbSet.Where(expression).AsNoTracking().ToList() :
-                dbSet.Where(expression).ToList();
+            return !trackChange ? dbSet.Where(expression).AsNoTracking() :
+                dbSet.Where(expression);
         }
     }
 }

@@ -1,0 +1,6 @@
+2023-09-18 10:19:16.249 +06:00 [DBG] Application start
+2023-09-18 10:20:58.328 +06:00 [DBG] Application start
+2023-09-18 10:22:00.093 +06:00 [DBG] Application start
+2023-09-18 10:25:07.579 +06:00 [DBG] Application start
+2023-09-18 10:26:29.627 +06:00 [DBG] Application start
+2023-09-18 10:26:53.875 +06:00 [DBG] Application start

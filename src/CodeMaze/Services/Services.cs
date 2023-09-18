@@ -1,4 +1,6 @@
 ﻿using Contracts;
+using Contracts.Data_Shaper;
+using DataTransferObjects.ComapnyDTO;
 using Services.Contracts;
 
 namespace Services
@@ -9,13 +11,15 @@ namespace Services
 
         public ICompanyService companyService { get ; set; }
         public IEmployeeService employeeService { get; set; }
+        public IDataShaper<CompanyDTO> DataShaper { get; }
 
         public Service(IUnitofWork unitofWork ,
-            ICompanyService companyService,IEmployeeService employeeService)
+            ICompanyService companyService,IEmployeeService employeeService, IDataShaper<CompanyDTO> dataShaper)
         {
             this.unitofWork = unitofWork;
             this.companyService = companyService;
             this.employeeService = employeeService;
+            DataShaper = dataShaper;
         }
     }
 }

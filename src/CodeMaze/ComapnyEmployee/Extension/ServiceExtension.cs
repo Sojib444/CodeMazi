@@ -1,10 +1,13 @@
 ﻿using Contracts;
+using Contracts.Data_Shaper;
+using DataTransferObjects.ComapnyDTO;
 using LoggerService;
 using Repository;
 using Repository.Employeerepository;
 using Repository.UnitofWork;
 using Services;
 using Services.Contracts;
+using Services.Data_Shaping;
 
 namespace ComapnyEmployee.Entension
 {
@@ -40,6 +43,7 @@ namespace ComapnyEmployee.Entension
             services.AddScoped<ICompanyService, ComapnyService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IService, Service>();
+            services.AddScoped<IDataShaper<CompanyDTO>, DataShaper<CompanyDTO>>();
         }
 
         public static void LoggerConfiguration(this IServiceCollection services)
