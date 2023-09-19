@@ -9,6 +9,7 @@ using Entities.Exceptions;
 using Entities.Model;
 using Entities.RequestFeatures;
 using Services.Contracts;
+using System.Dynamic;
 
 namespace Services
 {
@@ -38,7 +39,7 @@ namespace Services
             return mapper.Map<CreateCompnyDTO>(comapny);
         }
 
-        public  (IEnumerable<CompanyDTO>, MetaData metaData) GetAllCompanies(ComapnyParameters comapnyParameters, bool trackChange)
+        public  (IEnumerable<ExpandoObject>, MetaData metaData) GetAllCompanies(ComapnyParameters comapnyParameters, bool trackChange)
         {
             var companies = unitofWork.companyRepository.GetAllComapniesAsync(comapnyParameters, trackChange);
 
@@ -49,7 +50,7 @@ namespace Services
 
             var companyShapeData = dataShaper.ShapeData(companiesDto, comapnyParameters.fields);
 
-            return ((IEnumerable<CompanyDTO>)companyShapeData, companies.metaData);        
+            return (companyShapeData, companies.metaData);        
         }
 
         public CompanyDTO GetCompany(Guid Id, bool trackChange)

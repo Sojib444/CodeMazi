@@ -12,6 +12,6 @@
         }
 
         public string Orderby { get; set; }
-        public string fields { get; set; }
+        public string? fields { get; set; }
     }
 }

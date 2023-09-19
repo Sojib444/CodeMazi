@@ -1,0 +1,19 @@
+2023-09-19 19:44:16.063 +06:00 [DBG] Application start
+2023-09-19 20:00:31.899 +06:00 [DBG] Application start
+2023-09-19 20:02:04.902 +06:00 [DBG] Application start
+2023-09-19 20:02:56.749 +06:00 [DBG] Application start
+2023-09-19 20:04:06.237 +06:00 [DBG] Application start
+2023-09-19 20:05:53.583 +06:00 [DBG] Application start
+2023-09-19 20:10:50.453 +06:00 [DBG] Application start
+2023-09-19 20:12:09.700 +06:00 [DBG] Application start
+2023-09-19 20:14:00.943 +06:00 [DBG] Application start
+2023-09-19 20:14:33.653 +06:00 [DBG] Application start
+2023-09-19 20:14:57.951 +06:00 [DBG] Application start
+2023-09-19 20:15:16.976 +06:00 [ERR] Something went wrong at The is comany id 00000000-0000-0000-0000-000000000000 didn't not find in the database
+2023-09-19 20:15:29.037 +06:00 [DBG] Application start
+2023-09-19 20:16:19.634 +06:00 [DBG] Application start
+2023-09-19 20:16:52.470 +06:00 [DBG] Application start
+2023-09-19 20:18:01.048 +06:00 [DBG] Application start
+2023-09-19 20:20:38.886 +06:00 [DBG] Application start
+2023-09-19 20:22:10.949 +06:00 [DBG] Application start
+2023-09-19 20:22:50.812 +06:00 [DBG] Application start

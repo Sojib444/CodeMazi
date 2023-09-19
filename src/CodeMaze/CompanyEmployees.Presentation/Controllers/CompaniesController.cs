@@ -23,11 +23,16 @@ namespace CompanyEmployees.Presentation.Controllers
         }
 
         [HttpGet]
+        [HttpHead]
         public IActionResult GetCompanies([FromQuery] ComapnyParameters companyParameters)
         {
             var company = service.companyService.GetAllCompanies(companyParameters, false);
 
             Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(company.metaData));
+            //if (HttpContext.Request.Method == "HEAD")
+            //{
+            //    return StatusCode(200); // Return a 200 status for HEAD requests without a body
+            //}
 
             return Ok(company.Item1);
         }
@@ -79,6 +84,14 @@ namespace CompanyEmployees.Presentation.Controllers
             service.companyService.UpdateCompany(id, updateCompanyDTO, true);
 
             return NoContent();
+        }
+
+        [HttpOptions]
+        public IActionResult GetComaniesOption()
+        {
+            Response.Headers.Add("Allow","GET OPTIONS POST");
+
+            return Ok();
         }
     }
 }
