@@ -51,5 +51,10 @@ namespace ComapnyEmployee.Entension
             services.AddSingleton<ILoggerManager, LoggerManager>();
         }
 
+        public static void ConfigureRespnseCaching(this IServiceCollection services)
+        {
+            services.AddResponseCaching();
+        }
+
     }
 }

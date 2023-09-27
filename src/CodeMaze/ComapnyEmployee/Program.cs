@@ -1,6 +1,5 @@
 using ComapnyEmployee.Entension;
 using ComapnyEmployee.Extension;
-using CompanyEmployees.Presentation.ActionsFilters;
 using LoggerService;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
@@ -34,6 +33,9 @@ builder.Services.LoggerConfiguration();
 //CQRS configuration
 builder.Services.ConfigureCQRS();
 
+//cache Configuration
+builder.Services.ConfigureRespnseCaching();
+
 //configure the filters
 //builder.Services.AddScoped<ValidateFilterAttribute>();
 
@@ -51,6 +53,7 @@ builder.Services.AddControllers(config =>
     config.RespectBrowserAcceptHeader = true;
     config.ReturnHttpNotAcceptable = true;
     config.InputFormatters.Insert(0, GetJsonPatchInputFormatter());
+    config.CacheProfiles.Add("120", new CacheProfile() { Duration = 120 });
 })
 .AddXmlDataContractSerializerFormatters()
 .AddApplicationPart(typeof(CompanyEmployees.Presentation.AssemblyReference).Assembly);
@@ -68,11 +71,13 @@ app.UseHttpsRedirection();
 
 app.UseCors();
 
+app.UseResponseCaching();
+
 app.UseAuthorization();
 
 app.MapControllers();
 
 //Custom Exception Middleware 
- //Handling error globaly with built in middlewar
+//Handling error globaly with built in middlewar
 
 app.Run();

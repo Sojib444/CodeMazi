@@ -11,6 +11,7 @@ namespace CompanyEmployees.Presentation.Controllers
 {
     [Route("v1/api/[controller]")]
     [ApiController]
+    [ResponseCache(CacheProfileName = "120")]
     public class CompaniesController : ControllerBase
     {
         private readonly IService service;
